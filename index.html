@@ -77,7 +77,7 @@
       }
       function updateEnemiesPosition() {
         enemies.forEach((enemy) => {
-          enemy.top = enemy.top + 4;
+          enemy.top = enemy.top + 2;
         });
       }
       function updateMissilesPosition() {
@@ -107,6 +107,8 @@
           res.classList.add("result");
           res.textContent = " YOU WIN 🏆";
           document.body.append(res);
+          document.getElementById("hero").remove();
+          document.getElementById("missiles").remove();
           clearInterval(clearAll);
           document.onkeydown = null;
         } else {
@@ -118,6 +120,8 @@
               res.textContent = "YOU LOSE !!!";
               document.body.append(res);
               clearInterval(clearAll);
+              document.getElementById("hero").remove();
+              document.getElementById("missiles").remove();
               document.onkeydown = null;
             }
           }
